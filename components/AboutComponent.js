@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, ScrollView, Text, View } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
-import { LEADERS } from '../shared/leaders';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 
@@ -42,10 +41,10 @@ function CorporateLeadership(props) {
         return (
             <Card title='Corporate Leadership'>
                 <FlatList
-                    data={this.props.leaders.leaders}
+                    data={leaders}
                     renderItem={renderLeader}
                     keyExtractor={item => item.id.toString()}
-                />
+                    />                
             </Card>
         );
     }
@@ -61,12 +60,10 @@ class About extends Component {
 
     render() {
 
-
-
         return (
             <ScrollView>
                 <History />
-                <CorporateLeadership leaders={this.state.leaders} />
+                <CorporateLeadership leaders={this.props.leaders.leaders}/>
             </ScrollView>
         );
     };
