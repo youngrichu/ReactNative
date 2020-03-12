@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
     fetchComments: () => dispatch(fetchComments()),
     fetchPromos: () => dispatch(fetchPromos()),
     fetchLeaders: () => dispatch(fetchLeaders()),
-})
+});
 
 const MenuNavigator = createStackNavigator({
     Menu: {
